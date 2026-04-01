@@ -1,7 +1,7 @@
 # AutoSQL-Agent
 An AI-powered SQL agent that converts natural language queries into executable SQL and runs them on a MySQL database. Uses an LLM to generate queries and automatically correct errors when execution fails.   Built with LangGraph to manage workflow, decision-making, and retry logic. Enables users to interact with databases without writing SQL manually. Demonstrates a self-healing, agentic approach to database querying. 
 
-<img width="600" height="500" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/c687194b-dd59-4c64-aef2-57f7caff01ab" />
+<img width="800" height="700" alt="mermaid-diagram (1)" src="https://github.com/user-attachments/assets/0732706d-0c8d-42b7-9f36-941a1220cc7b" />
 
 ## 🧠 Project Overview
 
