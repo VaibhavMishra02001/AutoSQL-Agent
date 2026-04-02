@@ -2,13 +2,15 @@ from explain_query import explain_query
 from list_tables import list_tables
 from select_query import select_query   
 from create_table import create_table
+from insert_record import insert_record
 
 
 ALLOWED_PREFIXES = [
     "SELECT",
     "EXPLAIN",
     "SHOW TABLES",
-    "CREATE TABLE"
+    "CREATE TABLE",
+    "INSERT"
 ]
 
 def execute_tool(state):
@@ -29,6 +31,11 @@ def execute_tool(state):
         # Remove markdown-like syntax if present
         if sql.startswith("```sql"):
             sql = sql.strip("`\n ").replace("sql", "", 1).strip()
+        elif sql.startswith("```"):
+            sql = sql.strip("`\n ").strip()
+
+        print("\n[EXECUTING SQL]")
+        print(sql)
 
         sql_upper = sql.upper()
 
@@ -47,6 +54,8 @@ def execute_tool(state):
             result = list_tables(database=db_name)
         elif sql_upper.startswith("CREATE TABLE"):
             result = create_table(sql, db_name)
+        elif sql_upper.startswith("INSERT"):
+            result = insert_record(sql, db_name)
         else:
             result = {"error": "Unsupported SQL operation"}
 

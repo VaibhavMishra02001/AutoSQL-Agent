@@ -2323,6 +2323,7 @@ dependencies = [
     { name = "mysql" },
     { name = "mysql-connector-python" },
     { name = "sentence-transformers" },
+    { name = "tenacity" },
 ]
 
 [package.metadata]
@@ -2339,6 +2340,7 @@ requires-dist = [
     { name = "mysql", specifier = ">=0.0.3" },
     { name = "mysql-connector-python", specifier = ">=9.6.0" },
     { name = "sentence-transformers", specifier = ">=5.3.0" },
+    { name = "tenacity", specifier = ">=9.1.4" },
 ]
 
 [[package]]

@@ -19,12 +19,28 @@
 #     timeout=10   # 🔥 prevents hanging
 # )
 from dotenv import load_dotenv
-import os       
+import os
 from langchain_groq import ChatGroq
+from tenacity import retry, wait_exponential, stop_after_attempt
+
 load_dotenv()
+
+# Initialize LLM with retry logic for rate limiting
 llm = ChatGroq(
-    model="llama-3.3-70b-versatile",
+    model="openai/gpt-oss-120b",
     api_key=os.getenv("GROQ_API_KEY"),
     temperature=0.2,
-    timeout=10
+    timeout=30,
+    max_retries=3,  # Built-in retry for transient errors
 )
+
+# Wrapper function with exponential backoff for 429 errors
+@retry(wait=wait_exponential(multiplier=1, min=2, max=10), stop=stop_after_attempt(3))
+def invoke_with_retry(prompt):
+    
+    response = llm.invoke(prompt)
+
+    if hasattr(response, "content"):
+        return response.content.strip()
+
+    return str(response).strip()

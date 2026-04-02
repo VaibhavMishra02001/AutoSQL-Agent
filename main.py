@@ -5,7 +5,7 @@ def run_agent():
 
     # Initial state
     state = {
-        "question": "Show all record with price greater than 20000 from products table",
+        "question": "insert a watch price at 4000 in products table at last index if tha data is already there",
         "schema": "",
         "sql": "",
         "result": "",
