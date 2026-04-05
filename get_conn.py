@@ -7,7 +7,7 @@ def get_conn(database=None):
         conn_params = {
             "host": "localhost",
             "user": "root",
-            "password": "Vaibhav@123"
+            "password": "YOUR_PASSWORD_HERE"
         }
         
         # Add database if provided
