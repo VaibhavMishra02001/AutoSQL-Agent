@@ -5,3 +5,5 @@ class State(TypedDict):
     sql: str
     result: str
     error: str
+    attempts: int
+    db: str

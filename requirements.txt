@@ -10,3 +10,6 @@ sentence-transformers
 langchain_core
 langchain_groq
 tenacity
+pandas
+streamlit
+mysql

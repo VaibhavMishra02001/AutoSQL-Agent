@@ -1,15 +1,21 @@
 import mysql.connector
 
-def get_conn():
+def get_conn(database=None):
     print("🔌 Connecting to MySQL...")
 
     try:
-        conn = mysql.connector.connect(
-            host="localhost",
-            user="root",
-            password="Vaibhav@123",
-            database="db"
-        )
+        conn_params = {
+            "host": "localhost",
+            "user": "root",
+            "password": "Vaibhav@123"
+        }
+        
+        # Add database if provided
+        if database:
+            conn_params["database"] = database
+            print(f"📁 Connecting to database: {database}")
+        
+        conn = mysql.connector.connect(**conn_params)
 
         print("✅ MySQL Connected Successfully")
         return conn

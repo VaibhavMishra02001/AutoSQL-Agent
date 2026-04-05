@@ -10,6 +10,8 @@ def run_agent():
         "sql": "",
         "result": "",
         "error": "",
+        "attempts": 0,
+        "db": ""
     }
     print("[DEBUG] Initial State:", state)
 
