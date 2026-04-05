@@ -1,7 +1,7 @@
 # AutoSQL-Agent
 An AI-powered SQL agent that converts natural language queries into executable SQL and runs them on a MySQL database. Uses an LLM to generate queries and automatically correct errors when execution fails.   Built with LangGraph to manage workflow, decision-making, and retry logic. Enables users to interact with databases without writing SQL manually. Demonstrates a self-healing, agentic approach to database querying. 
 
-<img width="800" height="700" alt="mermaid-diagram (1)" src="https://github.com/user-attachments/assets/0732706d-0c8d-42b7-9f36-941a1220cc7b" />
+<img width="889" height="936" alt="Screenshot 2026-04-05 193606" src="https://github.com/user-attachments/assets/7c6a2c61-8380-4059-b6bd-42ca98fb2817" />
 
 ## 🧠 Project Overview
 
@@ -10,6 +10,7 @@ This project builds a **self-healing SQL agent** using:
 - 🔗 LangGraph (workflow orchestration)
 - 🤖 LLM (Gemini / OpenAI / Groq)
 - 🗄 MySQL (database)
+  <img width="800" height="700" alt="mermaid-diagram (1)" src="https://github.com/user-attachments/assets/0732706d-0c8d-42b7-9f36-941a1220cc7b" />
 ---
 ## Setup Instructions 
 
@@ -49,6 +50,6 @@ def get_conn():
 ---
 ### Run Agent
 ```
-uv run python main.py`
+streamlit run app.py
 ```
 ---
